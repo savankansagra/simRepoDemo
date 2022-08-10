@@ -25,7 +25,7 @@ public class Sim {
 	private Integer Sim_card_no;
 	
 	@Column(name="Mobile_no")
-	private Integer Mobile_no;
+	private Long Mobile_no;
 	
 	@Column(name="Status")
 	private Boolean Status;
@@ -51,7 +51,7 @@ public class Sim {
 		super();
 	}
 
-	public Sim(long id, Integer sim_card_no, Integer mobile_no, Boolean status, Date expiry_date,
+	public Sim(long id, Integer sim_card_no, Long mobile_no, Boolean status, Date expiry_date,
 			String status_of_registration, String kYC, String telecom_Provider, String full_name) {
 		super();
 		this.id = id;
@@ -82,11 +82,11 @@ public class Sim {
 		Sim_card_no = sim_card_no;
 	}
 
-	public Integer getMobile_no() {
+	public Long getMobile_no() {
 		return Mobile_no;
 	}
 
-	public void setMobile_no(Integer mobile_no) {
+	public void setMobile_no(Long mobile_no) {
 		Mobile_no = mobile_no;
 	}
 

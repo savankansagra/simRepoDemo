@@ -55,4 +55,12 @@ public class SimController {
 		return new ResponseEntity<String>("Sim Deleted Succesfully.", HttpStatus.OK);
 	}
 	
+	@GetMapping("/to-renew")
+	public ResponseEntity<List<Sim>> getLastRenewSim(){
+		List<Sim> renewSim = simService.getLastRenewSim();
+		return new ResponseEntity<List<Sim>>(renewSim, HttpStatus.OK);
+	}
+	
+	
+	
 }

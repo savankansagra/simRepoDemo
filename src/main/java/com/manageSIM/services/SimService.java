@@ -1,5 +1,8 @@
 package com.manageSIM.services;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +45,12 @@ public class SimService {
 	public void deleteSim(Long id) {
 		Sim deleteSim = simRepository.findById(id).get();
 		simRepository.delete(deleteSim);
+	}
+
+	public List<Sim> getLastRenewSim() {
+		//Get the 30 day after today
+		List<Sim> renewSim = simRepository.getSimByLast();
+		return renewSim;
 	}
 	
 }
